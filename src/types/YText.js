@@ -657,6 +657,10 @@ export class YText extends AbstractType {
     return str
   }
 
+  toJSON() {
+    return this.toString();
+  }
+
   /**
    * Apply a {@link Delta} on this shared YText type.
    *
