@@ -13,6 +13,7 @@
     "lint": "markdownlint README.v13.md && standard && tsc",
     "docs": "rm -rf docs; jsdoc --configure ./.jsdoc.json --verbose --readme ./README.v13.md --package ./package.json || true",
     "serve-docs": "npm run docs && serve ./docs/",
+    "prepare": "npm run dist",
     "preversion": "npm run lint && PRODUCTION=1 npm run dist && npm run docs && node ./dist/tests.js --repitition-time 1000",
     "postversion": "git push && git push --tags",
     "debug": "concurrently 'live-server --port=3443 --entry-file=test.html' 'npm run watch'",
